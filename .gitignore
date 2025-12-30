@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+server/venv/
+
+# Build outputs
+dist/
+build/
+
+# Cache
+.vite/
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Local/IDE settings
+.claude/settings.local.json
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*

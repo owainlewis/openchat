@@ -1,0 +1,365 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent-color: #2563eb;
+}
+
+/* Disable transitions during theme change to prevent animation glitch */
+html.no-transitions,
+html.no-transitions *,
+html.no-transitions *::before,
+html.no-transitions *::after {
+  transition: none !important;
+}
+
+/* Base styles */
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  @apply antialiased;
+}
+
+/* ChatGPT-style dark mode */
+.dark {
+  --dark-bg: #212121;
+  --dark-bg-secondary: #2f2f2f;
+  --dark-bg-tertiary: #424242;
+  --dark-border: #424242;
+  --dark-border-subtle: #303030;
+
+  background-color: var(--dark-bg);
+  color-scheme: dark;
+}
+
+/* Override Tailwind dark grays with ChatGPT colors */
+.dark .bg-white {
+  background-color: var(--dark-bg) !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: var(--dark-bg) !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: var(--dark-bg-secondary) !important;
+}
+
+.dark .bg-gray-200 {
+  background-color: var(--dark-bg-tertiary) !important;
+}
+
+.dark .bg-gray-700 {
+  background-color: var(--dark-bg-secondary) !important;
+}
+
+.dark .bg-gray-800 {
+  background-color: var(--dark-bg-secondary) !important;
+}
+
+.dark .bg-gray-900 {
+  background-color: var(--dark-bg) !important;
+}
+
+.dark .border-gray-200,
+.dark .border-gray-700 {
+  border-color: var(--dark-border-subtle) !important;
+}
+
+.dark .hover\:bg-gray-800:hover {
+  background-color: var(--dark-bg-tertiary) !important;
+}
+
+.dark .hover\:bg-gray-700:hover {
+  background-color: var(--dark-bg-tertiary) !important;
+}
+
+.dark .hover\:bg-gray-600:hover {
+  background-color: #525252 !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #424242;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #525252;
+}
+
+/* Prose overrides for markdown content */
+.prose {
+  @apply text-gray-900;
+}
+
+.dark .prose {
+  @apply text-gray-100;
+}
+
+.prose p {
+  @apply my-3;
+}
+
+.prose p:first-child {
+  @apply mt-0;
+}
+
+.prose p:last-child {
+  @apply mb-0;
+}
+
+.prose ul,
+.prose ol {
+  @apply my-3 pl-6;
+}
+
+.prose li {
+  @apply my-1;
+}
+
+.prose a {
+  @apply text-gray-900 underline hover:text-gray-600;
+}
+
+.dark .prose a {
+  @apply text-gray-100 hover:text-gray-400;
+}
+
+.prose strong {
+  @apply font-semibold;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic my-4;
+}
+
+.dark .prose blockquote {
+  border-color: #424242;
+}
+
+.prose hr {
+  @apply border-gray-200 my-6;
+}
+
+.dark .prose hr {
+  border-color: #424242;
+}
+
+.prose table {
+  @apply w-full my-4 border-collapse;
+}
+
+.prose th,
+.prose td {
+  @apply border border-gray-300 px-3 py-2 text-left;
+}
+
+.dark .prose th,
+.dark .prose td {
+  border-color: #424242;
+}
+
+.prose th {
+  @apply bg-gray-100 font-semibold;
+}
+
+.dark .prose th {
+  background-color: var(--dark-bg-secondary);
+}
+
+/* Inline code */
+.inline-code {
+  @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.dark .inline-code {
+  background-color: var(--dark-bg-secondary);
+}
+
+/* Code blocks */
+.code-block-wrapper {
+  @apply my-4 rounded-lg overflow-hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .code-block-wrapper {
+  border-color: #424242;
+}
+
+.code-block-header {
+  @apply flex items-center justify-between px-4 py-2 text-sm;
+  background-color: #f3f4f6;
+}
+
+.dark .code-block-header {
+  background-color: #2f2f2f;
+}
+
+.code-block-language {
+  @apply text-gray-600 font-medium;
+}
+
+.dark .code-block-language {
+  @apply text-gray-400;
+}
+
+.copy-button {
+  @apply flex items-center gap-1.5 px-2 py-1 rounded text-gray-600 transition-colors;
+}
+
+.copy-button:hover {
+  background-color: #e5e7eb;
+}
+
+.dark .copy-button {
+  @apply text-gray-400;
+}
+
+.dark .copy-button:hover {
+  background-color: #424242;
+}
+
+.code-block-wrapper pre {
+  @apply m-0 p-4 overflow-x-auto;
+  background-color: #f9fafb;
+}
+
+.dark .code-block-wrapper pre {
+  background-color: #1a1a1a;
+}
+
+.code-block-wrapper code {
+  @apply text-sm font-mono;
+}
+
+/* Highlight.js theme overrides */
+.hljs {
+  @apply bg-transparent;
+}
+
+/* Dark mode syntax highlighting - Material darker style */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal,
+.dark .hljs-section,
+.dark .hljs-link {
+  color: #c792ea;
+}
+
+.dark .hljs-string,
+.dark .hljs-template-variable,
+.dark .hljs-addition,
+.dark .hljs-attribute,
+.dark .hljs-meta-string {
+  color: #c3e88d;
+}
+
+.dark .hljs-comment,
+.dark .hljs-quote,
+.dark .hljs-deletion,
+.dark .hljs-meta {
+  color: #676e95;
+}
+
+.dark .hljs-number,
+.dark .hljs-regexp,
+.dark .hljs-literal,
+.dark .hljs-bullet {
+  color: #f78c6c;
+}
+
+.dark .hljs-name,
+.dark .hljs-variable,
+.dark .hljs-template-variable,
+.dark .hljs-attribute {
+  color: #ffcb6b;
+}
+
+.dark .hljs-title,
+.dark .hljs-function {
+  color: #82aaff;
+}
+
+.dark .hljs-built_in,
+.dark .hljs-type {
+  color: #ffcb6b;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #7c3aed;
+}
+
+.hljs-string,
+.hljs-template-variable,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #16a34a;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #6b7280;
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-bullet {
+  color: #ea580c;
+}
+
+.hljs-name,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  color: #ca8a04;
+}
+
+.hljs-title,
+.hljs-function {
+  color: #2563eb;
+}
+
+.hljs-built_in,
+.hljs-type {
+  color: #ca8a04;
+}
+
+/* Animation for streaming cursor */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

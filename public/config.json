@@ -1,0 +1,36 @@
+{
+  "api": {
+    "baseUrl": "http://localhost:8000",
+    "mode": "native"
+  },
+  "features": {
+    "sidebar": true
+  },
+  "ui": {
+    "title": "Open Chat",
+    "welcomeMessage": "How can I help you today?",
+    "welcomeSubtitle": "I'm an AI assistant ready to help with coding, writing, analysis, and more.",
+    "examplePrompts": [
+      {
+        "icon": "code",
+        "title": "Help me code",
+        "prompt": "Can you help me write a React component that displays a sortable data table?"
+      },
+      {
+        "icon": "document",
+        "title": "Summarize text",
+        "prompt": "Can you summarize the key points from a document I'll paste?"
+      },
+      {
+        "icon": "lightbulb",
+        "title": "Brainstorm ideas",
+        "prompt": "I need creative ideas for a mobile app that helps people learn new skills."
+      },
+      {
+        "icon": "pencil",
+        "title": "Write content",
+        "prompt": "Help me write a professional email to follow up after a job interview."
+      }
+    ]
+  }
+}
